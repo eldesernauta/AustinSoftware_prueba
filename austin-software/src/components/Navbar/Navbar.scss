@@ -8,13 +8,13 @@
     @content;
   }
 }
-
 .navigation {
   position: absolute !important;
   top: 0;
   left: 0;
   width: 100%;
-  
+  background-color: transparent;
+
   .toggle-menu {
     display: none;
   }

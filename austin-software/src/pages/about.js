@@ -1,19 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-const About = () => {
-return (
-	<div
-	style={{
-		display: 'flex',
-		justifyContent: 'center',
-		alignItems: 'center',
-		height: '100vh',
-		backgroundColor: '#000',
-	}}
-	>
-	<h1>GeeksforGeeks is a Computer Science portal for geeks.</h1>
-	</div>
-);
-};
+const about = () => {
+    return (
+        <div style={{overflowY:"scroll", height:"200vh", display: 'flex', justifyContent: 'center', alignItems: 'center'}}>About</div> 
+    )
+}
 
-export default About;
+export default about
