@@ -1,35 +1,45 @@
+import logo from "./../../logo.png";
+import "./Navbar.scss";
 import React from "react";
-import logo from './../../logo.png';
-import './Navbar.scss';
-import { Nav, NavLink, Bars, NavMenu } from "./NavbarElements";
+import {
+  Nav,
+  NavLink,
+  Bars,
+  NavMenu,
+  NavBtn,
+  NavBtnLink,
+} from "./NavbarElements";
 
 const Navbar = () => {
   return (
     <>
-      <Nav className="navigation">
-        <NavLink to="/">
-          <img src={logo} alt="logo" width="200px"/>
+      <Nav>
+        <NavLink to="/about" activeStyle>
+          <img src={logo} alt="logo" className="logo" />
         </NavLink>
         <Bars />
+
         <NavMenu>
-          <NavLink to="/" activeStyle>
+          <NavLink to="/home" activeStyle>
             Home
           </NavLink>
-          <NavLink to="/" activeStyle>
+          <NavLink to="/about" activeStyle>
             About Us
           </NavLink>
-          <NavLink to="/" activeStyle>
+          <NavLink to="/library" activeStyle>
             Library
           </NavLink>
-          <NavLink to="/" activeStyle>
+          <NavLink to="/locations" activeStyle>
             Locations
           </NavLink>
-          <NavLink to="/" activeStyle>
+          <NavLink to="/companies" activeStyle>
             For Companies
           </NavLink>
-          <NavLink to="/" activeStyle>
+          <NavLink to="/find-your-dream-job" activeStyle>
             Find your dream job
           </NavLink>
+          {/* Second Nav */}
+          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
       </Nav>
     </>

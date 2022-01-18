@@ -1,3 +1,21 @@
 .navigation {
   font-family: "DM Sans", sans-serif;
+  background: transparent;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem calc((100vw - 1240px) / 2);
+  z-index: 10;
+  margin-bottom: -80px;
 }
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    
+    svg{
+      display: block !important;
+    }
+  }
+}
+  
