@@ -3,8 +3,18 @@
     @content;
   }
 }
+@mixin sm-desktop {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
 
 .navigation {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
   .toggle-menu {
     display: none;
   }
