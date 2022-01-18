@@ -14,12 +14,12 @@ const Navbar = () => {
   return (
     <>
       <Nav>
-        <NavLink to="/about" activeStyle>
+        <NavLink to="/about" activeStyle className="col-10 col-md-4">
           <img src={logo} alt="logo" className="logo" />
         </NavLink>
         <Bars />
 
-        <NavMenu>
+        <NavMenu className="col-2 col-md-8 d-flex justify-content-end">
           <NavLink to="/home" activeStyle>
             Home
           </NavLink>
