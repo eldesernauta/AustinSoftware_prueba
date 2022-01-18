@@ -17,7 +17,7 @@ const Home = () => {
             consectetur adipiscing elit.
           </p>
         </Col>
-        <Col className="col-12 col-md-6 col-shape">
+        <Col className="col-12 col-md-6">
           <img src={shape} alt="shape" className="shape" />
         </Col>
       </Row>
@@ -49,7 +49,6 @@ const Home = () => {
               </li>
             </ul>
           </div>
-          <img src={shape} alt="shape" className="shape" />
           <ul className="social-media">
             <li>
               <i className="fab fa-facebook-square"></i>
@@ -64,6 +63,8 @@ const Home = () => {
               <i className="fab fa-whatsapp"></i>
             </li>
           </ul>
+
+          <img src={shape} alt="shape" className="shape" />
         </Col>
         <Col className="col-12 col-md-6 form-col">
           <Form className="formulario">
@@ -98,7 +99,7 @@ const Home = () => {
             </div>
           </Form>
         </Col>
-      </Row>      
+      </Row>
     </div>
   );
 };

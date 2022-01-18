@@ -10,12 +10,24 @@
   }
 }
 
+html,
 body {
   background: #e5e5e5;
 
+  @include sm-desktop {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
   @include smartphone() {
-    max-width: 100vw !important;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 }
 
@@ -45,6 +57,7 @@ body {
     padding: 10rem calc((100vw - 1240px) / 2) 0;
     display: flex;
     align-items: center;
+    position: relative;
 
     h1 {
       font-family: "Catamaran", sans-serif;
@@ -67,34 +80,35 @@ body {
       font-size: 1.5rem;
       font-weight: 300;
       line-height: 2rem;
+      z-index: 9;
       @include smartphone() {
         position: absolute;
-        z-index: 9;
         font-size: 18px;
         line-height: 21px;
-
       }
     }
     .shape {
       position: absolute;
-      bottom: 10%;
+      bottom: -40%;
       mix-blend-mode: multiply;
-      right: -5%;
-      z-index: 1 !important;
+      right: 0;
+      z-index: 1;
+
       @include smartphone() {
         transform: scale(0.4);
-        margin-right: -100px;
-        bottom: 0;
+        right: -100px;
+        top: 0;
       }
       @include sm-desktop() {
         transform: scale(0.8);
-        right: -40px;
-        bottom: 50px;
+        right: -50px;
+        bottom: -60%;
       }
     }
+
     @include smartphone() {
-      padding: 10rem 1rem 0;
-      background-position: center bottom;
+      padding: 8rem 1rem 2rem !important;
+      min-height: 300px !important;
     }
   }
 
@@ -143,13 +157,29 @@ body {
         }
       }
     }
+    .shape {
+      position: absolute;
+      bottom: -350px;
+      left: 0;
+      transform: scaleX(-1);
+      z-index: 1 !important;
+      width: 450px;
+      max-height: 500px;
+      object-fit: cover !important;
+      object-position: 100% 0 !important;
 
+      @include smartphone() {
+        bottom: -350px;
+        left: -50px;
+      }
+    }
     .social-media {
       list-style-type: none;
       padding: 0;
       display: flex;
       justify-content: start;
       margin-top: 50px;
+      z-index: 99;
 
       li {
         margin: 0px 20px 0px 0px;
@@ -175,21 +205,9 @@ body {
       }
     }
 
-    .shape {
-      position: absolute;
-      bottom: -55%;
-      left: -5%;
-      transform: scaleX(-1);
-      z-index: 0 !important;
-      @include smartphone() {
-        bottom: -400px;
-        left: -50px;
-      }
-    }
-
     .form-col {
       .formulario {
-        z-index: 9 !important;
+        z-index: 99 !important;
 
         label {
           font-size: 14px;
@@ -204,7 +222,6 @@ body {
         textarea {
           border: 1px solid #009fa0;
           margin-bottom: 20px;
-
           transition: 0.5s ease-in-out;
 
           &:focus {
@@ -254,9 +271,5 @@ body {
     @include smartphone() {
       padding: 3rem 1rem 5rem;
     }
-  }
-
-  * {
-    overflow: hidden;
   }
 }

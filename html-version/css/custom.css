@@ -11,62 +11,12 @@ ul {
   margin: 0;
 }
 
+/**** Hamburguer Menu ****/
 
-nav .logo {
-    max-width: 200px;
-  }
-  nav ul li {
-    display: none !important;
-  }
+.toggle-menu {
+  display: none;
+}
 
-  nav label,
-  #hamburger {
-    display: none;
-    transform: translateX(-30px);
-  }
-  /* Horizontal Menu Items */
-  #hamitems {
-    display: flex;
-  }
-  #hamitems a {
-    width: 20%; /* 100% / 5 tabs = 20% */
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-  }
-  #hamitems a:hover {
-    background: #2f4f4f;
-  }
-
-  /* Small screens */
-
-  @media screen and (max-width: 768px) {
-    /* Show Hamburger Icon */
-    nav label {
-      display: inline-block;
-      color: white;
-      font-style: normal;
-      font-size: 1.2em;
-      padding: 10px;
-    }
-    /* Break down menu items into vertical */
-    #hamitems a {
-      box-sizing: border-box;
-      display: block;
-      width: 100%;
-    }
-    /* Toggle Show/Hide Menu */
-    #hamitems {
-      display: none;
-    }
-    nav input:checked ~ #hamitems {
-      display: block;
-    }
-    input[type="checkbox"]:checked + label {
-      opacity: 0.2;
-    }
-  }
 /**** NavBar ****/
 
 nav {
@@ -312,14 +262,14 @@ Main.home {
   font-size: 16px;
 }
 
-.footer .menu li {
+.footer .menu-footer li {
   color: white;
   margin: 0px 0 15px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
 
-.footer .menu li:hover {
+.footer .menu-footer li:hover {
   color: #e789ab;
   transition: 0.3s ease-in-out;
 }
@@ -408,6 +358,104 @@ Main.home {
     display: block;
   }
 
+  nav ul li {
+    display: none;
+  }
+
+  .toggle-menu {
+    display: block !important;
+  }
+  .toggle-menu.button,
+  .menu {
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+  }
+  .toggle-menu #check {
+    display: none;
+  }
+  .toggle-menu .button {
+    top: 0px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+    z-index: 9;
+  }
+  .toggle-menu .button .top {
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+    transition: 0.5s;
+  }
+  .toggle-menu .button .mid {
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+    transition: 0.7s;
+  }
+  .toggle-menu .button .bot {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+    transition: 0.5s;
+  }
+  .toggle-menu .menu {
+    margin: auto;
+    top: 0px;
+    right: -20px;
+    width: 150px;
+    padding: 3rem 0.5rem 1rem;
+    background-color: #e789ab;
+    border-radius: 30px 0px 0px 30px;
+    opacity: 0;
+    z-index: 1;
+  }
+  .toggle-menu .menu a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 15px;
+    opacity: 0;
+    transform: translatex(20px);
+    transition: 1s;
+  }
+  .toggle-menu #check:checked ~ .menu a:hover {
+    background: #505050;
+    transition-delay: 0s;
+    transition-duration: 0s;
+    transition: 0s;
+  }
+  .toggle-menu #check:checked ~ .menu {
+    opacity: 1;
+    transform: translatex(-10px);
+  }
+  .toggle-menu #check:checked ~ .menu a {
+    opacity: 1;
+    transform: translatex(0px);
+  }
+  .toggle-menu #check:checked ~ .fondo {
+    background: #101010;
+    opacity: 0.6;
+    height: 100vh;
+    transition: 1s;
+  }
+
   .hero {
     padding: 8rem 1rem 2rem !important;
     min-height: 300px !important;
@@ -445,8 +493,9 @@ Main.home {
     padding: 3rem 1rem !important;
   }
   .footer h4,
-  .footer .menu {
+  .footer .menu-footer {
     margin-top: 30px;
+    position: block;
   }
   .copyright i {
     display: none;
