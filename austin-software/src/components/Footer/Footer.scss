@@ -16,6 +16,19 @@
   background: #3e479b;
   padding: 2rem calc((100vw - 1240px) / 2);
 
+  p {
+    color: white;
+    font-weight: 300;
+    line-height: 2rem;
+    margin-top: 20px;
+  }
+  h4 {
+    color: white;
+
+    @include smartphone() {
+      margin: 30px 0 0;
+    }
+  }
   .contact-info {
     ul {
       margin-top: 30px;
@@ -35,27 +48,6 @@
           margin: 5px 0;
           font-size: 16px;
         }
-      }
-    }
-  }
-
-  p {
-    color: white;
-    font-weight: 300;
-    line-height: 2rem;
-    margin-top: 20px;
-  }
-  h4 {
-    color: white;
-
-    @include smartphone() {
-      margin: 30px 0 0;
-    }
-  }
-  .contact-info {
-    li {
-      i {
-        color: white;
       }
     }
   }
